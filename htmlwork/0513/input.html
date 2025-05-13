@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>전화번호부 입력 폼</legend>
+        <form action="input_proc.html" method="post">
+        <div>
+            <label for="name">이름</label>
+            <input type="text" name="name" id="name" placeholder="이름을 입력하세요">
+        </div>
+        
+        <div>
+            <label for="tel">전화번호</label>
+            <input type="text" name="tel" id="tel" placeholder="전화번호를 입력하세요">
+        </div>
+
+        <div>
+            <label for="email">이메일</label>
+            <input type="email" name="email" id="email" placeholder="이메일을 입력하세요">
+        </div>
+        <div>
+            <input type="submit" value="전화번호부 입력">
+        </div>
+        </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>로그인 폼</legend>
+        <form action="login_proc.html" method="post">
+        <input type="text" name="id" id="id" placeholder="아이디"><p>
+        <input type="password" name="password" id="password" placeholder="패스워드"><p>
+        <input type="submit" value="로그인">
+        </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>radio 폼[여러개 중에 한 개 선택]</legend>
+        <p>1.다음 중 마크업 언어로 화면을 표시하는 언어는?</p>
+        <input type="radio" name="one" id="onequestion" value="1" checked>1.html<br>
+        <input type="radio" name="one" id="onequestion" value="2">2.java<br>
+        <input type="radio" name="one" id="onequestion" value="3">3.css<br>
+        <input type="radio" name="one" id="onequestion" value="4">4.javascript<br>
+    </fieldset>
+
+    <fieldset>
+        <legend>select-option 폼-범위내에서 선택[여러개 중에 한 개 선택/여러개 중에 여러개 선택/두 개 중 한 개]</legend>
+        취미선택
+        <select name="habit"> <!-- multiple : 여러개 선택-->
+            <option value="운동">운동</option>
+            <option value="독서">독서</option>
+            <option value="컴퓨터">컴퓨터</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>여러개 선택을 하는 폼[checkbox]</legend>
+        취미선택:
+        <input type="checkbox" name="habit" id="habit" checked>운동
+        <input type="checkbox" name="habit" id="habit">독서
+        <input type="checkbox" name="habit" id="habit">컴퓨터
+        <input type="checkbox" name="habit" id="habit">음악
+    </fieldset>
+    <fieldset>
+        <legend>기타 input</legend>
+        버튼:<input type="button" value="나는버튼"><br>
+        파일선택:<input type="file"><br>
+        색선택:<input type="color"><br>
+        날짜선택:<input type="date"><br>
+        날짜시간:<input type="datetime-local"><br>
+        숨김:<input type="hidden"><br>
+        이미지:<input type="image"><br>
+        달 선택:<input type="month"><br>
+        숫자:<input type="number"><br>
+        범위:<input type="range"><br>
+        폼 리셋:<input type="reset"><br>
+        검색:<input type="search"><br>
+        전화번호:<input type="tel"><br>
+        시간:<input type="time"><br>
+        웹주소:<input type="url"><br>
+        주선택:<input type="week"><br>
+        여러줄의 편집창<br>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,71 @@
+a{
+    text-decoration: none;
+    color:white;
+}
+nav{
+    background-color: #263343;
+    display:flex;
+    justify-content: space-between;
+}
+
+.navbar_logo{
+    color:white;
+}
+
+.navbar_logo > i{
+    font-size:30px;
+}
+
+.navbar_logo > a{
+    font-size: 10px;
+}
+
+.navbar_menu{
+    list-style-type: none;
+    display:flex;
+}
+
+.navbar_menu li {
+    padding:8px 16px;
+}
+
+.navbar_icon{
+    list-style-type: none;
+    display:flex;
+}
+
+.navbar_icon li{
+    padding:8px 8px;
+}
+
+nav{
+    align-items: center;/*logo를 세로 중앙 정렬*/
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+/*문제: 글자의 색을 black으로 변경하는 방법을 찾으시오.*/
+.navbar_menu li:hover, .navbar_menu li:hover > a {
+    background-color: orange;
+    color:black;
+}
+
+
+@media screen and (max-width:600px) {
+    nav{
+        flex-direction: column;
+    }
+    .navbar_menu{
+        flex-direction: column;
+        /* width:100%;
+        align-items: center; */
+        width:100%;
+    }
+    /*문제: 메뉴의 li에 마우스가 올라갈 때 한 행 색을 모두 변경*/
+    .navbar_menu li{
+        text-align: center;
+    }
+}

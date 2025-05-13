@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        input tag의 name은 값을 전달할 때 변수 역할
+        id는 태그를 구별하기 위한 속성이다.
+    </pre>
+    <form action="test.html">
+    <input type="text" id="name" value="">
+    <button>태그버튼</button>
+    <input type="button" value="input버튼" onClick="test()">
+    </form>
+    <script>
+        var n=document.getElementById("name");
+        function test(){
+            // n.value="홍길동"
+            //alert(n.value);
+            // alert(document.getElementById("name").value);
+            n.style.backgroundColor="yellow";
+        }
+    </script>
+
+    <!-- <div style="width:100px;height:100px;background-color: red;" onmouseover="alert('마우스 올라감')";></div> -->
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        th, td{
+            border: 1px solid black;
+        }
+
+        th{
+            background-color: blue;
+            color:white;
+        }
+        /*border=1을 사용하지 않고 이중선이 아닌 단일선으로 테이블을 표시하시오.*/
+        
+        /* 시간표 테두리 제외하기 */
+        /* tr:nth-child(1) td{
+            border:none;
+        }
+        h4{
+            margin-bottom: 0;
+        } */
+    </style>
+</head>
+<body>
+    <table align="center">
+        <!-- <tr>
+            <td colspan="6" align="center">
+                <h4>시간표</h4>
+            </td>
+        </tr>  -->
+
+        <caption>시간표</caption>
+        <tr>
+            <th>시간</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+        </tr>
+        <tr>
+            <td>1<mark>교시</mark></td>
+            <td>국어</td>
+            <td>영어</td>
+            <td rowspan="2">수학</td>
+            <td rowspan="2">국어</td>
+            <td rowspan="2">과학</td>
+        </tr>
+        <tr>
+            <td>2<mark>교시</mark></td>
+            <td>영어</td>
+            <td>과학</td>
+        </tr>
+        <tr>
+            <td>3<mark>교시</mark></td>
+            <td rowspan="2">수학</td>
+            <td>체육</td>
+            <td>영어</td>
+            <td>미술</td>
+            <td rowspan="2">체육</td>
+        </tr>
+        <tr>
+            <td>4<mark>교시</mark></td>
+            <td>국어</td>
+            <td colspan="2">과학</td>
+        </tr>
+    </table>
+</body>
+</html>
