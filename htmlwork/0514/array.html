@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display:flex;
+            align-items: center;
+        }
+        .newscom{
+            width: 130px;
+            height: 70px;
+            border: 1px solid gray;
+            text-align: center;
+            align-content:center;
+        }
+
+        /* .newscom:hover{
+            background-color:blue;
+            color:white;
+        } */
+
+        /* css의 문제점은 태그 안의 값을 동적으로 변경할 수 없음. 해결방안은?javascript */
+        a{
+            color:white;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="box">
+        <div class="newscom">서울신문</div>
+    </div>
+    <script>
+        const newscom=document.getElementsByClassName("newscom");
+        newscom[0].addEventListener("mouseover",(event)=>{
+            //this는 현재 객체를 의미하지만 이벤트에서는 윈도우 자신을 의미한다.
+            // console.log(this);
+            // console.log(this.innerText);
+            // console.log(this.innerHTML);
+            console.log(event.target);
+            console.log(event.target.textContent);
+            // event.target.textContent="<a href='https://naver.com'>구독</a> | 기사보기"
+            event.target.innerHTML="<a href='https://naver.com'>구독</a> | 기사보기"
+            event.target.style.backgroundColor="blue";
+            event.target.style.color="white";
+        });
+
+        newscom[0].addEventListener("mouseout",(event)=>{
+            console.log(event.target);
+            console.log(event.target.textContent);
+            event.target.textContent="서울신문"
+            event.target.style.backgroundColor="white";
+            event.target.style.color="black";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            /* display:flex;
+            flex-wrap:wrap; */
+            width:20%;
+            border: 1px solid red;
+            font-size:0;
+            padding:20px;
+            transition: transform 3s; /* transform은 transition이 설정되어야 동작함 */
+        }
+
+        .box input:nth-child(1){
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .box input:nth-child(2){
+            border-top:none;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .box:hover{
+            transform:rotateY(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="text">
+        <input type="text">
+    </div>
+    <button>관리자용 전환</button>
+    <script>
+        const box=document.getElementsByClassName("box");
+        const trsbtn=document.querySelector("button"); //변수 사용시 var, let, const
+        trsbtn.addEventListener("click",()=>{
+            box[0].style.transform="rotateY(360deg)";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display:flex;
+            align-items: center;
+            flex-wrap:wrap;
+        }
+        .newscom{
+            width: 130px;
+            height: 70px;
+            border: 1px solid gray;
+            text-align: center;
+            align-content:center;
+        }
+
+        a{
+            color:white;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div id="box" class="box">
+
+    </div>
+    <script>
+        //1개의 content를 id가 box안에 넣기
+        // let content=`<div class="newscom">서울신문</div>`;
+        // const box=document.getElementById("box");
+        // box.innerHTML=content;
+
+        //여러개를 넣을 경우(반복문)
+        // let content=`<div class="newscom">서울신문</div>`;
+        // const box=document.getElementById("box");
+        // for(i=0;i<10;i++){
+        //     box.innerHTML+=content;
+        // }
+
+        //데이터를 준비하여 반복문을 처리
+        var data=["서울신문","프레시안","MBC","MBN","경향신문","이데일리","한겨례","스포츠동아","OSEN","데일리안"];
+        let tmp;
+        const box=document.getElementById("box");
+
+        for(let value of data){
+            let content=`<div class="newscom">${value}</div>`;
+            box.innerHTML+=content;
+        }
+
+        const newscom=document.getElementsByClassName("newscom");
+        for(i=0;i<data.length;i++){
+            newscom[i].addEventListener("mouseover",(event)=>{
+            tmp=event.target.textContent;
+            event.target.textContent="구독 | 기사보기";
+            event.target.style.backgroundColor="blue";
+            event.target.style.color="white";
+        });
+        }
+        
+        for(i=0;i<data.length;i++){
+            newscom[i].addEventListener("mouseout",(event)=>{
+                console.log(event.target);
+                console.log(event.target.textContent);
+               
+                event.target.textContent=tmp;
+                event.target.style.backgroundColor="white";
+                event.target.style.color="black";
+            });
+            
+        }
+    </script>
+</body>
+</html>
