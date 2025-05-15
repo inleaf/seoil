@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        for(i=0;i<10;i++){
+            document.write(`test${i}<br>`);
+        }
+        */
+
+        let arr=["test1","test2", "test3", "test4", "test5","test6"];
+        //arr[0], arr[1],...,arr[4]
+        /*
+        for(i=0;i<arr.length;i++){
+            document.write("arr"+arr[i]+"<br>");
+        }
+        */
+
+        //for, foreach, forin, forof 여러가지의 종류 존재
+        /* arr.forEach((element,index) => {
+             document.write(`arr${element}${index}<br>`);
+        });*/
+
+        /*
+        for(index in arr){
+            document.write(arr[index]+"<br>");
+        }*/
+
+        /*
+        for(value of arr){
+            document.write(value+"<br>");
+        }
+        */
+
+        /* var형식의 변수(문법적으로 엄격하지 않음), 
+        let 형식의 변수(문법적으로 엄격), const 형식의 변수(한 번 사용 후 다른 값 입력 불가)
+        */
+       /*
+        for(var i=0;i<arr.length;i++){
+            document.write(arr[i]+"<br>");
+        }
+
+        document.write("i value:"+i+"<br>");
+        
+        for(var i=0;i<arr.length;i++){
+            document.write(arr[i]+"<br>");
+        }
+        */
+        /*
+            태그의 종류: <div></div> : 태그와 태그 사이에 값이 입력되는 형태 <div>test</div>
+            innerHTML, innerText -> textContent
+        */
+        let body = document.querySelector("body");
+        body.innerHTML += '<a href="#">웹페이지 링크</a>';
+        body.innerText += "<a href='#'>웹페이지 링크</a>";
+        body.textContent += "<a href='#'>text content웹페이지 링크</a>";
+    </script>      
+    <!--
+        script에 태그 주석을 사용할 경우 오류 발생
+        태그와 태그 사이의 입력은 innerHTML (태그 입력 시)
+        태그와 태그 사이의 문자 입력은 innerText or textContent
+    -->              
+</body>
+</html>
