@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script>
+        //1)data.json부터 데이터를 수신한다.
+        let data = [
+        {"pic":"person.png","name":"kim","hp":"010-1111-1111"},
+        {"pic":"person.png","name":"lee","hp":"010-1111-2222"},
+        {"pic":"person.png","name":"hong","hp":"010-1111-3333"},
+        {"pic":"person.png","name":"park","hp":"010-1111-4444"},
+        {"pic":"person.png","name":"ryu","hp":"010-1111-5555"}
+        ]
+
+        //2)수신데이터를 반복문을 사용하여 아래코드를 body에 입력한다.
+        let body = document.querySelector("body");//입력할 객체 얻기
+        data.forEach((obj) => {
+            // console.log(obj);
+            let fw=`<div>
+            <img src="${obj.pic}" alt="${obj.pic.pic}" width="100px">
+            <ul>
+            <li><span>${obj.name}</span></li>
+            <li><span>${obj.hp}</span></li>
+            </ul>
+            </div>`;
+            body.innerHTML+=fw;
+        });
+    </script>
+    <style>
+        img{
+            border: 1px solid black;
+            border-radius: 100%;
+        }
+        div{
+            display:flex;            
+        }
+    </style>
+</body>
+</html>

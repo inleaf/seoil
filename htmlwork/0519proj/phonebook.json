@@ -1,0 +1,7 @@
+[
+    {"id":"1","pic":"Brooklyn.png","name":"Brooklyn Simmons","group":"friends", "hp":"(603) 555-0121", "email":"tim.jennings@example.com"},
+    {"id":"2","pic":"Devon.png","name":"Devon Lane","group":"parents", "hp":"(406) 125-0120", "email":"alma.lawson@example.com"},
+    {"id":"3","pic":"Ronald.png","name":"Ronald Richards","group":"coworker", "hp":"(704) 535-0127", "email":"debra.holt@example.com"},
+    {"id":"4","pic":"Wacop.png","name":"Wacop Warren","group":"friends", "hp":"(239) 655-0108", "email":"kenzi.lawson@example.com"},
+    {"id":"5","pic":"Wade.png","name":"Wade Jade","group":"friends", "hp":"(808) 843-0111", "email":"willie.jennings@example.com"}
+]
