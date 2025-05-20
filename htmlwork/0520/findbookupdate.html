@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="findbook.js"></script>
+</head>
+<body>
+    <div>
+        <div>
+            책찾기:
+            <input type="text" id="inputbox">
+            <button onclick=find()>찾기</button>
+        </div>
+    </div>
+    <div>
+        <ul id="findlist">
+            <li>제목: </li>
+            <li>저자: </li>
+            <li>가격: </li>
+        </ul>
+    </div>
+    <script>
+    function find(){
+        let xhttp = new XMLHttpRequest();
+        xhttp.open("get","books.json");
+        xhttp.send();
+
+        xhttp.onload=()=>{
+            let books = JSON.parse(xhttp.responseText);
+            let inputbox = document.getElementById("inputbox")
+            let search = inputbox.value;
+            console.log(search);
+
+            //정확히 찾기 => 정확히 찾는 내용을 일부 내용으로 찾기 기능 수정
+            let regex = new RegExp(search, "i"); //문자열을 정규식으로 변환(i는 대소문자 무시) /javascript/i
+
+            // let result=books.find(book=>book.title === search);
+            // let result = books.find(book => regex.test(book.title)); //정규식을 전체정보와 비교를 text함수를 통해 처리
+            let result = books.filter(book => regex.test(book.title));
+            console.log(result);
+
+            //찾은 객체를 화면에 표시
+            // let ul = document.querySelector("#findlist");
+            let ul = document.getElementById("findlist");
+            ul.querySelector("li:nth-child(1)").textContent=`제목: ${result["title"]}`;
+            ul.querySelector("li:nth-child(2)").textContent=`저자: ${result["author"]}`;
+            ul.querySelector("li:nth-child(3)").textContent=`가격: ${result["price"]}원`;
+        }
+
+        /*
+        참고사항 querySelector 함수는 클래스는 .클래스명, 아이디는 #아이디명, 일반태그는 태그명으로
+        객체를 획득할 수 있다.
+        */
+    }
+    </script>
+</body>
+</html>
