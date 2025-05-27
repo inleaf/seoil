@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container border rounded bg-light p-4 m-4 justify-content-center">
+        <h3>회원가입</h3>
+        <div class="row">
+            <div class="mt-3 col-sm-6">
+                <label for="name" class="form-label">이름</label>
+                <input type="text" class="form-control" required>
+            </div>
+            <div class="mt-3 col-sm-6">
+                <label for="nickname" class="form-label">별명</label>
+                <input type="text" class="form-control">
+            </div>        
+        </div>
+        <div class="mt-3">
+            <label for="email" class="form-label">이메일</label>
+            <input type="email" class="form-control" required>
+        </div>
+        <div class="mt-3">
+        <label for="address" class="form-label">주소</label>
+        <input type="text" class="form-control" required>
+        </div>
+        <div class="mt-3">
+            <label for="detail" class="form-label">상세주소(필수아님)</label>
+            <input type="text" class="form-control" placeholder="상세주소를 입력해주세요.">
+        </div>
+        <div class="mt-3 row">
+            <div class="col-sm-8">
+                <label for="route" class="form-label">가입경로</label>
+                <select class="form-select">
+                    <option>인터넷</option>
+                    <option>지인</option>
+                    <option>친구</option>
+                    <option>광고</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label for="code" class="form-label">추천인 코드</label>
+                <input type="text" class="form-control">
+            </div>        
+        </div>
+    </div>
+    <div class="container m-4">
+        <hr>
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="auth"> 개인정보 수집 및 이용에 동의합니다.
+        </label>
+        <h5><input type="submit" value="가입완료" class="mt-3 p-3 rounded bg-primary w-100 text-white text-center"></h5>
+    </div>
+</body>
+</html>
