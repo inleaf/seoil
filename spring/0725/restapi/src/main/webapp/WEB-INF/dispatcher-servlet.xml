@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<!-- 	<bean id="scheduledWork" class="work.ScheduledWork"></bean>
+	
+	<task:scheduled-tasks>
+	<task:scheduled ref="scheduledWork" method="work1" cron="0/5 * * * * ?"/>
+	</task:scheduled-tasks> -->
+	<task:annotation-driven/>
+	<context:component-scan base-package="restapi, work"/>
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/WEB-INF/"></property>
+	<property name="suffix" value=".jsp"></property>
+	</bean>
+<!-- 자동으로 로드되는 bean 파일/없어도 상관없음 --> 
+	<mvc:annotation-driven>
+    <mvc:message-converters>
+        <!-- JSON 변환용 (jackson) -->
+        <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+        <!-- XML 변환용 (JAXB) -->
+        <bean class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter" />
+    </mvc:message-converters>
+</mvc:annotation-driven>
+</beans>
