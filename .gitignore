@@ -1,0 +1,16 @@
+# node_modules 폴더를 Git에서 무시
+node_modules/
+
+# .env 파일을 Git에서 무시 (환경 변수 파일)
+.env
+
+# 빌드된 파일들 (생성된 build 폴더 무시)
+build/
+
+# 로그 파일들 무시
+*.log
+
+# OS 및 IDE 파일들 무시 (예: macOS, VS Code, JetBrains)
+.DS_Store
+.vscode/
+.idea/
